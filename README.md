@@ -12,6 +12,7 @@
 - `api/verify.js` — 비밀번호/정답 검증 서버리스 함수. **정답은 절대 `public/`에 두지 말 것.**
 - `lib/stages-data.js` — 단계별 정답/비밀번호/다음 장소 안내 데이터. `api/`에서만 불러오므로 브라우저에서 열람 불가.
 - `materials/` — 웹사이트에 올라가지 않는 참고용 파일 (인쇄물, 상품 등).
+- `scripts/fix_transparency.py` — 배경 제거 도구가 투명 배경 대신 체크무늬를 실제 픽셀로 구워서 내보낸 사진을 진짜 투명 PNG로 고쳐주는 스크립트. 사진 배경이 투명이어야 하는데 체크무늬가 그대로 보이면 이걸로 처리: `python scripts/fix_transparency.py 원본.png 결과.png` (Python + `pillow`, `numpy`, `scipy` 필요).
 
 ## 로컬에서 확인하기
 
