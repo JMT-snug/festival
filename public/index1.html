@@ -27,20 +27,24 @@
 
   <!-- 4) 문제 -->
   <div id="stage-problem" class="stage-screen">
-    <h1>문제</h1>
-    <p id="problem-text">TODO: 문제 내용을 여기에 입력하세요.</p>
-    <form id="answer-form">
-      <input type="text" id="answer-input" placeholder="정답 입력" autocomplete="off" required>
-      <button type="submit">제출</button>
-    </form>
-    <p id="answer-feedback"></p>
+    <div class="panel">
+      <h1>문제</h1>
+      <p id="problem-text">TODO: 문제 내용을 여기에 입력하세요.</p>
+      <form id="answer-form">
+        <input type="text" id="answer-input" placeholder="정답 입력" autocomplete="off" required>
+        <button type="submit">제출</button>
+      </form>
+      <p id="answer-feedback"></p>
+    </div>
   </div>
 
   <!-- 5) 정답 처리 후: 다음 노트북 위치 + 비밀번호 안내 -->
   <div id="stage-result" class="stage-screen">
-    <h1>정답입니다!</h1>
-    <p id="next-location"></p>
-    <p id="next-password"></p>
+    <div class="panel">
+      <h1>정답입니다!</h1>
+      <p id="next-location"></p>
+      <p id="next-password"></p>
+    </div>
   </div>
 
   <script src="/js/stage1.js"></script>
