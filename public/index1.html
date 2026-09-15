@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>1번째 단서</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- 1) 편지 봉투에서 편지가 나오는 영상 (자동 재생 -> 끝나면 자동으로 다음 화면) -->
+  <div id="stage-video" class="stage-screen active">
+    <video id="envelope-video" src="/assets/stage1/envelope-open.mp4" autoplay muted playsinline></video>
+  </div>
+
+  <!-- 2) 편지지 내용 이미지 1 -->
+  <div id="stage-letter1" class="stage-screen">
+    <img src="/assets/stage1/letter-1.png" alt="의뢰 편지" class="letter-image">
+    <button class="next-btn" data-next="stage-letter2">다음</button>
+  </div>
+
+  <!-- 3) 편지지 내용 이미지 2 -->
+  <div id="stage-letter2" class="stage-screen">
+    <img src="/assets/stage1/letter-2.png" alt="범인의 쪽지" class="letter-image">
+    <button class="next-btn" data-next="stage-problem">문제 풀러 가기</button>
+  </div>
+
+  <!-- 4) 문제 -->
+  <div id="stage-problem" class="stage-screen">
+    <h1>문제</h1>
+    <p id="problem-text">TODO: 문제 내용을 여기에 입력하세요.</p>
+    <form id="answer-form">
+      <input type="text" id="answer-input" placeholder="정답 입력" autocomplete="off" required>
+      <button type="submit">제출</button>
+    </form>
+    <p id="answer-feedback"></p>
+  </div>
+
+  <!-- 5) 정답 처리 후: 다음 노트북 위치 + 비밀번호 안내 -->
+  <div id="stage-result" class="stage-screen">
+    <h1>정답입니다!</h1>
+    <p id="next-location"></p>
+    <p id="next-password"></p>
+  </div>
+
+  <script src="/js/stage1.js"></script>
+</body>
+</html>

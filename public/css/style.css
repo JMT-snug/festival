@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #000;
+  color: #f5f0e6;
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  overflow: hidden;
+}
+
+.stage-screen {
+  display: none;
+  position: fixed;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 24px;
+  text-align: center;
+}
+
+.stage-screen.active {
+  display: flex;
+}
+
+#stage-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+.letter-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+.next-btn {
+  margin-top: 24px;
+  padding: 14px 36px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: #8a6d3b;
+  color: #fff;
+  cursor: pointer;
+}
+
+.next-btn:hover {
+  background: #a9895a;
+}
+
+#stage-problem h1,
+#stage-result h1 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+#problem-text {
+  max-width: 640px;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+#answer-form {
+  margin-top: 24px;
+  display: flex;
+  gap: 8px;
+}
+
+#answer-input {
+  padding: 12px 16px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  min-width: 240px;
+}
+
+#answer-form button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #8a6d3b;
+  color: #fff;
+  cursor: pointer;
+}
+
+#answer-feedback {
+  margin-top: 16px;
+  min-height: 1.4em;
+  color: #ffb4b4;
+}
+
+#stage-result #next-location,
+#stage-result #next-password {
+  font-size: 1.3rem;
+  margin: 8px 0;
+}
