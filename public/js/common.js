@@ -33,6 +33,24 @@ if (introScreen) {
   });
 }
 
+// 영상이 들어있는 화면: 화면이 보이면 처음부터 재생하고, 끝나거나 누르면
+// video의 data-next에 지정된 화면으로 넘어간다. (HTML에 video[data-next]만
+// 적어두면 되고, 별도 JS를 작성할 필요 없음)
+document.querySelectorAll('.stage-screen video').forEach((video) => {
+  const screen = video.closest('.stage-screen');
+
+  screen.addEventListener('stagescreen:show', () => {
+    video.currentTime = 0;
+    video.play().catch(() => {});
+  });
+
+  if (video.dataset.next) {
+    video.addEventListener('ended', () => showScreen(video.dataset.next));
+    // 자동재생이 막히거나 빨리 넘어가고 싶을 때를 대비해 눌러도 다음으로 넘어가게 함
+    video.addEventListener('click', () => showScreen(video.dataset.next));
+  }
+});
+
 document.querySelectorAll('.hint-btn').forEach((btn) => {
   const modal = document.getElementById(btn.dataset.hint);
   btn.addEventListener('click', () => modal.classList.add('active'));

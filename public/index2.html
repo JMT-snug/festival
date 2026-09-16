@@ -11,7 +11,7 @@
   <!-- 0) 시작 화면: 버튼을 눌러야 다음으로 넘어감 -->
   <div id="stage-intro" class="stage-screen active">
     <div class="panel">
-      <button type="button" class="next-btn" id="detective-arrive-btn">탐정 도착!</button>
+      <button type="button" class="next-btn" data-next="stage-problem">탐정 도착!</button>
     </div>
   </div>
 
@@ -121,8 +121,13 @@
 범인은 4층 공실에 있을 가능성이 크다. 더 늦기 전에 그곳으로 가서 범인을 잡고, 빼앗긴 부적을 되찾아야 한다.
 
 열쇠를 손에 쥔 채 우리는 서둘러 4층으로 향했다.</p>
-      <button type="button" class="next-btn" data-next="stage-intro">4층 공실로 이동하기</button>
+      <button type="button" class="next-btn" data-next="stage-ending-video">4층 공실로 이동하기</button>
     </div>
+  </div>
+
+  <!-- 3) 마무리 영상 (재생 끝나면 다음 팀을 위해 시작 화면으로 초기화) -->
+  <div id="stage-ending-video" class="stage-screen">
+    <video src="/assets/stage2/ending.mp4" muted playsinline data-next="stage-intro"></video>
   </div>
 
   <script src="/js/common.js"></script>

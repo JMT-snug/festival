@@ -11,13 +11,13 @@
   <!-- 0) 시작 화면: 버튼을 눌러야 영상이 시작됨 -->
   <div id="stage-intro" class="stage-screen active">
     <div class="panel">
-      <button type="button" class="next-btn" id="detective-arrive-btn">탐정 도착!</button>
+      <button type="button" class="next-btn" data-next="stage-video">탐정 도착!</button>
     </div>
   </div>
 
   <!-- 1) 편지 봉투에서 편지가 나오는 영상 (재생 끝나면 자동으로 다음 화면) -->
   <div id="stage-video" class="stage-screen">
-    <video id="envelope-video" src="/assets/stage1/envelope-open.mp4" muted playsinline></video>
+    <video src="/assets/stage1/envelope-open.mp4" muted playsinline data-next="stage-letter1"></video>
   </div>
 
   <!-- 2) 편지지 내용 이미지 1 -->
@@ -119,8 +119,13 @@
 철수는 자신이 속한 2학년 탈의실에 노트북과 증인 매수 트릭을 남겨두어 수사망을 교란하는 한편, 정작 훔쳐간 부적들은 가장 안전하고 눈에 띄지 않는 1학년(freshman) 탈의실 구석의 폐쇄된 사물함 속에 은닉해 두었습니다. 2학년인 자신의 동선에서 벗어난 1학년 탈의실이라면 탐정님조차 쉽게 의심하지 못할 것이라 과신했던 것입니다.
 
 철수의 원한과 범행 동기, 그리고 부적들의 진짜 행방까지 모든 수수께끼가 풀렸습니다. 탐정님, 더 늦기 전에 어서 1학년 탈의실로 이동해 철수가 숨겨둔 소중한 부적들을 되찾고 이 사건을 완벽하게 해결하시죠!</p>
-      <button type="button" class="next-btn" data-next="stage-intro">4층으로 이동!</button>
+      <button type="button" class="next-btn" data-next="stage-ending-video">4층으로 이동!</button>
     </div>
+  </div>
+
+  <!-- 6) 마무리 영상 (재생 끝나면 다음 팀을 위해 시작 화면으로 초기화) -->
+  <div id="stage-ending-video" class="stage-screen">
+    <video src="/assets/stage1/ending.mp4" muted playsinline data-next="stage-intro"></video>
   </div>
 
   <script src="/js/common.js"></script>

@@ -1,9 +1,5 @@
 const STAGE_ID = 3;
 
-document.getElementById('detective-arrive-btn').addEventListener('click', () => {
-  showScreen('stage-problem');
-});
-
 const PRIZE_COUNT = 3;
 const RETURN_DELAY_MS = 30000;
 
