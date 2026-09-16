@@ -15,13 +15,57 @@
     </div>
   </div>
 
-  <!-- TODO: 3번째 단계 스토리/문제 준비되면 이 화면부터 채우기 -->
-  <div id="stage-todo" class="stage-screen">
+  <!-- 1) 문제 (마지막) -->
+  <div id="stage-problem" class="stage-screen">
     <div class="panel">
-      <h1>준비 중</h1>
-      <p class="problem-text">3번째 단계 내용은 아직 준비 중입니다.</p>
+      <h1>마지막 승부</h1>
+      <p class="problem-text">4층 공실의 문을 열자, 방 한가운데에 커다란 금고가 놓여 있었다. 그리고 그 옆에는 우리가 찾던 범인이 서 있었다.
+
+"여기까지 따라오다니… 제법이군."
+
+범인은 금고 앞을 가로막았지만, 우리는 도망갈 틈을 주지 않고 사방에서 천천히 포위했다. 이제 범인이 빠져나갈 길은 없었다.
+
+그러자 범인은 잠시 주변을 둘러보더니 피식 웃었다.
+
+"좋아. 여기까지 왔으니 마지막 기회를 주지."
+
+그가 손으로 금고를 가리켰다.
+
+"이 금고의 비밀번호를 맞히면 순순히 포기하겠다. 너희가 찾는 부적도 이 안에 있지."
+
+모두의 시선이 금고로 향했다.
+
+이제 남은 것은 단 하나.
+
+마지막 암호를 풀어 금고를 열고, 범인을 붙잡아 부적을 되찾는 것.
+
+드디어 마지막 승부가 시작되었다.</p>
+      <button type="button" class="hint-btn" data-hint="hint-modal-1">사진 보기</button>
+      <form class="answer-form" data-step="1" data-next="stage-celebrate">
+        <input type="text" class="answer-input" placeholder="정답 입력" autocomplete="off" required>
+        <button type="submit">제출</button>
+      </form>
+      <p class="answer-feedback"></p>
     </div>
   </div>
+
+  <!-- 힌트 이미지 모달 -->
+  <div id="hint-modal-1" class="modal">
+    <img src="/assets/stage3/last.png" alt="힌트: 금고 위 쪽지와 알파벳 키패드">
+    <button type="button" class="hint-close-btn">닫기</button>
+  </div>
+
+  <!-- 2) 정답 처리 후: 축하 + 부적 뽑기 (30초 후 자동으로 시작 화면 복귀) -->
+  <div id="stage-celebrate" class="stage-screen">
+    <div class="panel">
+      <h1>사건 해결!</h1>
+      <p class="problem-text">범인을 붙잡고 빼앗겼던 부적을 모두 되찾았습니다. 축하합니다, 탐정님!</p>
+      <img id="prize-image" class="inline-image" src="" alt="당첨된 부적">
+    </div>
+  </div>
+
+  <audio id="sfx-firework" src="/assets/stage3/firework.mp3"></audio>
+  <audio id="sfx-applause" src="/assets/stage3/applause.mp3"></audio>
 
   <script src="/js/common.js"></script>
   <script src="/js/stage3.js"></script>

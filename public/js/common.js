@@ -3,12 +3,35 @@
 
 function showScreen(id) {
   document.querySelectorAll('.stage-screen').forEach((el) => el.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+  const el = document.getElementById(id);
+  el.classList.add('active');
+  el.dispatchEvent(new CustomEvent('stagescreen:show'));
 }
 
 document.querySelectorAll('.next-btn[data-next]').forEach((btn) => {
   btn.addEventListener('click', () => showScreen(btn.dataset.next));
 });
+
+// 노트북 하나를 여러 팀이 순서대로 쓰므로, 시작 화면으로 돌아오면 다음 팀을 위해
+// 이전 팀이 남긴 입력값/영상 재생 위치 등을 깨끗하게 지운다.
+const introScreen = document.getElementById('stage-intro');
+if (introScreen) {
+  introScreen.addEventListener('stagescreen:show', () => {
+    document.querySelectorAll('.answer-input').forEach((input) => {
+      input.value = '';
+    });
+    document.querySelectorAll('.answer-feedback').forEach((p) => {
+      p.textContent = '';
+    });
+    document.querySelectorAll('.mc-btn').forEach((btn) => {
+      btn.disabled = false;
+    });
+    document.querySelectorAll('video').forEach((video) => {
+      video.pause();
+      video.currentTime = 0;
+    });
+  });
+}
 
 document.querySelectorAll('.hint-btn').forEach((btn) => {
   const modal = document.getElementById(btn.dataset.hint);
@@ -74,7 +97,7 @@ document.querySelectorAll('.mc-choices').forEach((group) => {
         }
 
         let remaining = LOCKOUT_SECONDS;
-        feedback.textContent = `으악! ${remaining}초 후 다시 시도할 수 있습니다.`;
+        feedback.textContent = `으악! 함정에 당해서 정신을 차릴 수가 없어! (${remaining})`;
         const timer = setInterval(() => {
           remaining -= 1;
           if (remaining <= 0) {
@@ -82,7 +105,7 @@ document.querySelectorAll('.mc-choices').forEach((group) => {
             feedback.textContent = '';
             buttons.forEach((b) => (b.disabled = false));
           } else {
-            feedback.textContent = `으악! ${remaining}초 후 다시 시도할 수 있습니다.`;
+            feedback.textContent = `으악! 함정에 당해서 정신을 차릴 수가 없어! (${remaining})`;
           }
         }, 1000);
       } catch (err) {
