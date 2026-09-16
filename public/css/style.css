@@ -41,6 +41,7 @@ html, body {
 }
 
 .next-btn {
+  display: inline-block;
   margin-top: 24px;
   padding: 14px 36px;
   font-size: 1.1rem;
@@ -48,6 +49,7 @@ html, body {
   border-radius: 8px;
   background: #8a6d3b;
   color: #fff;
+  text-decoration: none;
   cursor: pointer;
 }
 

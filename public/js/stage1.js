@@ -7,10 +7,15 @@ function showScreen(id) {
 
 const video = document.getElementById('envelope-video');
 video.addEventListener('ended', () => showScreen('stage-letter1'));
-// 자동재생이 브라우저 정책으로 막혔을 경우를 대비해, 영상을 눌러도 다음으로 넘어가게 함
+// 영상이 끝나기 전에 눌러도 다음으로 넘어갈 수 있게 함
 video.addEventListener('click', () => showScreen('stage-letter1'));
 
-document.querySelectorAll('.next-btn').forEach((btn) => {
+document.getElementById('detective-arrive-btn').addEventListener('click', () => {
+  showScreen('stage-video');
+  video.play();
+});
+
+document.querySelectorAll('.next-btn[data-next]').forEach((btn) => {
   btn.addEventListener('click', () => showScreen(btn.dataset.next));
 });
 
@@ -42,15 +47,7 @@ document.querySelectorAll('.answer-form').forEach((form) => {
       const data = await res.json();
 
       if (data.ok) {
-        if (data.nextLocationText || data.nextPassword) {
-          document.getElementById('next-location').textContent = data.nextLocationText || '';
-          document.getElementById('next-password').textContent = data.nextPassword
-            ? `다음 비밀번호: ${data.nextPassword}`
-            : '';
-          showScreen('stage-result');
-        } else {
-          showScreen(form.dataset.next);
-        }
+        showScreen(form.dataset.next);
       } else {
         feedback.textContent = data.message || '정답이 아닙니다. 다시 시도해보세요.';
         input.select();
