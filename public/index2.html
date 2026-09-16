@@ -15,14 +15,49 @@
     </div>
   </div>
 
-  <!-- TODO: 2번째 단계 스토리/문제 준비되면 이 화면부터 채우기 -->
-  <div id="stage-todo" class="stage-screen">
+  <!-- 1) 문제 -->
+  <div id="stage-problem" class="stage-screen">
     <div class="panel">
-      <h1>준비 중</h1>
-      <p class="problem-text">2번째 단계 내용은 아직 준비 중입니다.</p>
+      <h1>갇힌 탈의실</h1>
+      <p class="problem-text">싸늘한 정적이 감도는 1학년 탈의실의 문을 열고 들어서자, 오래된 먼지 냄새와 함께 음산한 공기가 온몸을 감쌌습니다. 2학년 탈의실과는 달리 이곳은 신입생들의 풋풋함 대신 잊혀진 창고 같은 서늘함마저 감돌고 있었죠. 탐정님과 저는 철수가 숨겨둔 부적과 결정적인 증거를 찾기 위해 신중하게 발걸음을 옮기며 사물함 열을 하나씩 뒤지기 시작했습니다.
+
+첫 번째와 두 번째 사물함 라인을 지나, 드디어 철수의 기록에 남아 있던 세 번째 칸 앞에 다다랐습니다. 삐걱거리는 사물함 문을 열자, 그 안에는 철수가 훔쳐간 부적들과 함께 그의 범행을 온전히 증명할 핵심 단서들이 뭉치로 들어있었습니다. 마침내 모든 수수께끼가 풀리고 사건을 마무리할 수 있다는 안도감이 들었던 바로 그 순간이었습니다.
+
+콰창-!
+
+갑자기 바로 옆 칸의 어둠 속에서 거친 그림자가 튀어나왔습니다! 놀랄 겨를도 없이 나타난 인물은 다름 아닌 철수였습니다. 그는 당황한 저희를 강하게 밀쳐내며, 막 손에 쥐었던 핵심 단서 뭉치를 잽싸게 낚아채 갔습니다.
+
+"더 이상 날 쫓아오지 마!"
+
+철수는 소리를 지르며 탈의실 밖으로 번개처럼 뛰어 나갔고, 이내 쿵! 소리와 함께 묵직한 철문이 닫혔습니다. 뒤이어 밖에서 열쇠가 철컥거리며 돌아가는 절망적인 소리가 들려왔습니다. 탐정님과 제가 급히 달려가 문고리를 잡아 흔들었지만, 문은 밖에서 굳게 잠겨 조금도 움직이지 않았습니다. 철수가 단서를 되찾아 간 채 우리를 가둬버린 것이었습니다.
+
+어두컴컴한 탈의실 안에 갇혀버린 상황이었지만, 탐정님은 냉정함을 잃지 않고 문 주변을 둘러보셨습니다. 손전등 빛이 철문 안쪽을 비추자, 놀랍게도 문 안쪽에 알파벳 카드 여러 개가 무작위로 어지럽게 붙어 있는 것이 눈에 들어왔습니다.
+
+철수가 우리를 가둬두었지만, 이 탈의실 문에도 탈출을 위한 마지막 암호 트릭을 설치해 둔 것이 틀림없었습니다. 어지럽게 흩어져 있는 이 알파벳 카드들을 과연 어떻게 조합해야 문을 열고 도망친 철수를 쫓아갈 해답을 얻을 수 있을까요?</p>
+      <button type="button" class="hint-btn" data-hint="hint-modal-1">사진 보기</button>
+      <form class="answer-form" data-step="1" data-next="stage-result">
+        <input type="text" class="answer-input" placeholder="정답 입력" autocomplete="off" required>
+        <button type="submit">제출</button>
+      </form>
+      <p class="answer-feedback"></p>
     </div>
   </div>
 
+  <!-- 힌트 이미지 모달 -->
+  <div id="hint-modal-1" class="modal">
+    <img src="/assets/stage2/problem1.png" alt="힌트: 탈의실 문에 붙은 알파벳 카드">
+    <button type="button" class="hint-close-btn">닫기</button>
+  </div>
+
+  <!-- 2) 정답 처리 후 -->
+  <div id="stage-result" class="stage-screen">
+    <div class="panel">
+      <h1>정답입니다!</h1>
+      <p class="problem-text">TODO: 다음 전개 내용을 입력하세요.</p>
+    </div>
+  </div>
+
+  <script src="/js/common.js"></script>
   <script src="/js/stage2.js"></script>
 </body>
 </html>

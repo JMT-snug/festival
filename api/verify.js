@@ -41,11 +41,7 @@ module.exports = (req, res) => {
     }
 
     if (normalize(value) === normalize(problem.answer)) {
-      res.status(200).json({
-        ok: true,
-        nextLocationText: problem.nextLocationText,
-        nextPassword: problem.nextPassword,
-      });
+      res.status(200).json({ ok: true });
     } else {
       res.status(200).json({ ok: false, message: '정답이 아닙니다. 다시 시도해보세요.' });
     }
