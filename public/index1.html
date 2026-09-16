@@ -62,7 +62,7 @@
 장부 표지에는 범인이 직접 적어둔 오만한 메모가 남아 있었습니다.</p>
       <button type="button" class="hint-btn" data-hint="hint-modal-2">메모 보기</button>
       <p class="problem-text">탐정님, 다음 은신처로 쫓아가기 전에 범인이 설치해 둔 이 치사한 트릭부터 깨부수어야 할 것 같습니다. 4명 중 오직 1명만이 진실을 말하고 있는 이 상황에서, 진짜 범인의 실체는 과연 누구일까요?</p>
-      <form class="answer-form" data-step="2">
+      <form class="answer-form" data-step="2" data-next="stage-problem-3">
         <input type="text" class="answer-input" placeholder="범인의 이름 입력" autocomplete="off" required>
         <button type="submit">제출</button>
       </form>
@@ -73,6 +73,26 @@
   <!-- 힌트 이미지 모달 (문제 2) -->
   <div id="hint-modal-2" class="modal">
     <img src="/assets/stage1/problem-2.png" alt="힌트: 진술 기록 메모">
+    <button type="button" class="hint-close-btn">닫기</button>
+  </div>
+
+  <!-- 4-3) 문제 3 (마지막) -->
+  <div id="stage-problem-3" class="stage-screen">
+    <div class="panel">
+      <h1>철수의 노트북</h1>
+      <p class="problem-text">"범인은 철수였군요." 탐정님은 은신처 구석에서 찾아낸 네 장의 진술 기록을 다시 한 번 훑어보며, 깊은 한숨을 쉬었습니다. "네 사람의 증언을 모두 종합했을 때, 오직 훈이의 말만이 모순 없이 진실을 가리키고 있었습니다. 훈이의 말대로 철수의 증언('훈이가 한 짓이야')은 거짓이었죠. 그리고 만약 단 한 명만 진실이라면, 민지의 말('철수는 범인이 아니야')도 거짓이어야 하므로, 철수가 범인이라는 결론은 피할 수 없었습니다. 영수의 말('범인은 민지야') 역시 거짓이 되어 민지는 범인이 아니게 되었고요. 결국, 철수의 교활함은 상상 이상이었습니다. 그는 우리를 혼란에 빠뜨리기 위해 매수한 증인들에게 서로 다른 이야기를 하도록 지시했습니다. 모든 것이 치밀한 계산 아래 있었습니다. 우리는 철수에 대한 정보가 더 필요할 것 같습니다. 마침 철수의 노트북이 여기 있군요! 비밀번호를 풀어서 정보를 더 모아봐야겠습니다.</p>
+      <button type="button" class="hint-btn" data-hint="hint-modal-3">노트북 보기</button>
+      <form class="answer-form" data-step="3">
+        <input type="text" class="answer-input" placeholder="비밀번호 입력" autocomplete="off" required>
+        <button type="submit">제출</button>
+      </form>
+      <p class="answer-feedback"></p>
+    </div>
+  </div>
+
+  <!-- 힌트 이미지 모달 (문제 3) -->
+  <div id="hint-modal-3" class="modal">
+    <img src="/assets/stage1/problem-3.png" alt="힌트: 철수의 노트북 잠금 화면">
     <button type="button" class="hint-close-btn">닫기</button>
   </div>
 
