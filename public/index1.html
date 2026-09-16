@@ -25,28 +25,55 @@
     <button class="next-btn" data-next="stage-problem">문제 풀러 가기</button>
   </div>
 
-  <!-- 4) 문제 -->
+  <!-- 4) 문제 1 -->
   <div id="stage-problem" class="stage-screen">
     <div class="panel">
       <h1>문제</h1>
-      <p id="problem-text">탐정님, 바쁘신 와중에 편지를 읽고 이렇게 찾아와 주셔서 정말 감사합니다. 편지에도 써두었듯이 저는 이 마을 모퉁이에서 작게 부적 가게를 운영하고 있습니다. 어제 아침, 가게 문을 열었을 때의 그 황망함은 이루 말할 수 없습니다. 진열대를 가득 채우고 있던 부적들이 거짓말처럼 싹 사라지고, 카운터 위에는 비아냥거리는 투의 메모 한 장만 덩그러니 붙어 있었으니까요. 자신이 사 간 부적의 효과가 없어서 인생이 꼬였으니 복수하겠다며 제 모든 부적을 훔쳐간 것입니다.
+      <p class="problem-text">탐정님, 바쁘신 와중에 편지를 읽고 이렇게 찾아와 주셔서 정말 감사합니다. 편지에도 써두었듯이 저는 이 마을 모퉁이에서 작게 부적 가게를 운영하고 있습니다. 어제 아침, 가게 문을 열었을 때의 그 황망함은 이루 말할 수 없습니다. 진열대를 가득 채우고 있던 부적들이 거짓말처럼 싹 사라지고, 카운터 위에는 비아냥거리는 투의 메모 한 장만 덩그러니 붙어 있었으니까요. 자신이 사 간 부적의 효과가 없어서 인생이 꼬였으니 복수하겠다며 제 모든 부적을 훔쳐간 것입니다.
 
 넋을 놓고 있던 차에 주변을 수소문해 보니, 어제 새벽 낡은 학교 건물 2층 탈의실 근처에서 누군가 큼지막한 자루를 짊어지고 들어가는 모습이 목격되었다고 합니다. 그 탈의실이 범인의 임시 은신처 중 한 곳이 틀림없어 보였습니다. 탐정님이 오시기 전 제가 먼저 살짝 탈의실 안을 들여다보았는데, 범인은 자신이 쫓길 것을 대비해 만약의 순간에 다음 장소로 도망치기 위한 암호를 벽과 사물함 곳곳에 새겨두었더군요.
 
 녹슨 사물함 정면에는 큼지막하게 <strong>UIVHSNZM</strong>이라는 알 수 없는 알파벳 문장과 함께, 이를 풀어낼 힌트들이 흩어져 있었습니다. 어쩌면 다음 은신처를 나타내는 암호문일지도 모르겠습니다.</p>
-      <button type="button" id="hint-btn">힌트 보기</button>
-      <form id="answer-form">
-        <input type="text" id="answer-input" placeholder="정답 입력" autocomplete="off" required>
+      <button type="button" class="hint-btn" data-hint="hint-modal-1">힌트 보기</button>
+      <form class="answer-form" data-step="1" data-next="stage-problem-2">
+        <input type="text" class="answer-input" placeholder="정답 입력" autocomplete="off" required>
         <button type="submit">제출</button>
       </form>
-      <p id="answer-feedback"></p>
+      <p class="answer-feedback"></p>
     </div>
   </div>
 
-  <!-- 힌트 이미지 모달 -->
-  <div id="hint-modal" class="modal">
+  <!-- 힌트 이미지 모달 (문제 1) -->
+  <div id="hint-modal-1" class="modal">
     <img src="/assets/stage1/problem-1.png" alt="힌트: 사물함 사진">
-    <button type="button" id="hint-close-btn">닫기</button>
+    <button type="button" class="hint-close-btn">닫기</button>
+  </div>
+
+  <!-- 4-2) 문제 2 -->
+  <div id="stage-problem-2" class="stage-screen">
+    <div class="panel">
+      <h1>추가 단서</h1>
+      <p class="problem-text">Freshman! 신입생이라니... 탐정님, 알파벳 역순 암호를 풀어내신 깊은 혜안에 감탄을 금할 길이 없습니다. 2층 탈의실 사물함에 적힌 암호가 '신입생'을 가리키고 있었다니, 범인은 분명 신입생이거나 신입생들과 깊게 연관된 인물이 틀림없습니다.
+
+암호를 풀어내자마자 서둘러 다른 곳으로 이동하려던 그 순간, 탐정님께서는 은신처 구석구석을 조금 더 철저히 뒤져보자고 제안하셨죠. 과연 탐정님의 예리한 직감은 이번에도 틀리지 않았습니다. 낡은 캐비닛 뒤편, 먼지가 쌓인 찌그러진 상자 안에서 범인이 급하게 숨겨둔 것으로 보이는 비밀 장부와 메모지 뭉치를 추가로 발견할 수 있었습니다.
+
+그 메모지들을 읽어내려가던 저는 소름이 돋지 않을 수 없었습니다. 교활한 범인은 자신의 은신처가 들통날 경우를 대비해, 이미 주변 증인들을 돈과 부적으로 치밀하게 매수해 두었던 것입니다. 탐정님의 수망을 흔들고 도주할 시간을 벌기 위해, 용의선상에 오른 4명의 학생에게 미리 거짓 진술을 하도록 지시해 둔 상태였습니다.
+
+장부 표지에는 범인이 직접 적어둔 오만한 메모가 남아 있었습니다.</p>
+      <button type="button" class="hint-btn" data-hint="hint-modal-2">메모 보기</button>
+      <p class="problem-text">탐정님, 다음 은신처로 쫓아가기 전에 범인이 설치해 둔 이 치사한 트릭부터 깨부수어야 할 것 같습니다. 4명 중 오직 1명만이 진실을 말하고 있는 이 상황에서, 매수당하지 않고 진실만을 말하고 있는 단 한 명의 정직한 학생과 진짜 범인의 실체는 과연 누구일까요?</p>
+      <form class="answer-form" data-step="2">
+        <input type="text" class="answer-input" placeholder="범인의 이름 입력" autocomplete="off" required>
+        <button type="submit">제출</button>
+      </form>
+      <p class="answer-feedback"></p>
+    </div>
+  </div>
+
+  <!-- 힌트 이미지 모달 (문제 2) -->
+  <div id="hint-modal-2" class="modal">
+    <img src="/assets/stage1/problem-2.png" alt="힌트: 진술 기록 메모">
+    <button type="button" class="hint-close-btn">닫기</button>
   </div>
 
   <!-- 5) 정답 처리 후: 다음 노트북 위치 + 비밀번호 안내 -->

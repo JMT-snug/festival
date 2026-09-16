@@ -10,7 +10,7 @@ module.exports = (req, res) => {
     return;
   }
 
-  const { stageId, kind, value } = req.body || {};
+  const { stageId, kind, step, value } = req.body || {};
   const stage = stages[stageId];
 
   if (!stage) {
@@ -32,11 +32,19 @@ module.exports = (req, res) => {
   }
 
   if (kind === 'answer') {
-    if (normalize(value) === normalize(stage.answer)) {
+    const problems = stage.problems || [];
+    const problem = problems[(Number(step) || 1) - 1];
+
+    if (!problem) {
+      res.status(400).json({ ok: false, message: '잘못된 문제 번호입니다.' });
+      return;
+    }
+
+    if (normalize(value) === normalize(problem.answer)) {
       res.status(200).json({
         ok: true,
-        nextLocationText: stage.nextLocationText,
-        nextPassword: stage.nextPassword,
+        nextLocationText: problem.nextLocationText,
+        nextPassword: problem.nextPassword,
       });
     } else {
       res.status(200).json({ ok: false, message: '정답이 아닙니다. 다시 시도해보세요.' });

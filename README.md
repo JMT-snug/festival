@@ -27,6 +27,6 @@ GitHub 저장소에 push하면 Vercel이 자동으로 배포합니다 (Vercel �
 
 ## 각 단계(`index{N}.html`) 채워 넣을 것
 
-1. `lib/stages-data.js`에 해당 단계 번호로 `password`(1번은 없음) / `answer` / `nextLocationText` / `nextPassword`를 실제 값으로 채우기
-2. `public/index{N}.html`의 문제 텍스트(및 필요한 이미지) 채우기
+1. `lib/stages-data.js`에 해당 단계 번호로 `password`(1번은 없음)와 `problems` 배열을 채우기. 한 노트북 안에 문제가 여러 개면 `problems`에 순서대로 추가 — 마지막 문제에만 `nextLocationText`/`nextPassword`를 넣는다 (그 전 문제는 다음 문제로만 넘어감).
+2. `public/index{N}.html`의 문제 텍스트(및 필요한 이미지)를 채우고, 문제마다 `<form class="answer-form" data-step="N">`의 `data-step`을 `problems` 배열의 순서(1부터)와 맞추기. 마지막 문제가 아니면 `data-next="다음-화면-id"`도 지정.
 3. 2번 이상 단계는 페이지 진입 시 비밀번호 입력 폼부터 시작해야 함 (아직 미구현 — index1 이후 단계 만들 때 추가 예정)
