@@ -14,6 +14,14 @@ document.querySelectorAll('.next-btn').forEach((btn) => {
   btn.addEventListener('click', () => showScreen(btn.dataset.next));
 });
 
+const hintModal = document.getElementById('hint-modal');
+document.getElementById('hint-btn').addEventListener('click', () => {
+  hintModal.classList.add('active');
+});
+document.getElementById('hint-close-btn').addEventListener('click', () => {
+  hintModal.classList.remove('active');
+});
+
 document.getElementById('answer-form').addEventListener('submit', async (event) => {
   event.preventDefault();
 

@@ -29,13 +29,24 @@
   <div id="stage-problem" class="stage-screen">
     <div class="panel">
       <h1>문제</h1>
-      <p id="problem-text">TODO: 문제 내용을 여기에 입력하세요.</p>
+      <p id="problem-text">탐정님, 바쁘신 와중에 편지를 읽고 이렇게 찾아와 주셔서 정말 감사합니다. 편지에도 써두었듯이 저는 이 마을 모퉁이에서 작게 부적 가게를 운영하고 있습니다. 어제 아침, 가게 문을 열었을 때의 그 황망함은 이루 말할 수 없습니다. 진열대를 가득 채우고 있던 부적들이 거짓말처럼 싹 사라지고, 카운터 위에는 비아냥거리는 투의 메모 한 장만 덩그러니 붙어 있었으니까요. 자신이 사 간 부적의 효과가 없어서 인생이 꼬였으니 복수하겠다며 제 모든 부적을 훔쳐간 것입니다.
+
+넋을 놓고 있던 차에 주변을 수소문해 보니, 어제 새벽 낡은 학교 건물 2층 탈의실 근처에서 누군가 큼지막한 자루를 짊어지고 들어가는 모습이 목격되었다고 합니다. 그 탈의실이 범인의 임시 은신처 중 한 곳이 틀림없어 보였습니다. 탐정님이 오시기 전 제가 먼저 살짝 탈의실 안을 들여다보았는데, 범인은 자신이 쫓길 것을 대비해 만약의 순간에 다음 장소로 도망치기 위한 암호를 벽과 사물함 곳곳에 새겨두었더군요.
+
+녹슨 사물함 정면에는 큼지막하게 <strong>UIVHSNZM</strong>이라는 알 수 없는 알파벳 문장과 함께, 이를 풀어낼 힌트들이 흩어져 있었습니다. 어쩌면 다음 은신처를 나타내는 암호문일지도 모르겠습니다.</p>
+      <button type="button" id="hint-btn">힌트 보기</button>
       <form id="answer-form">
         <input type="text" id="answer-input" placeholder="정답 입력" autocomplete="off" required>
         <button type="submit">제출</button>
       </form>
       <p id="answer-feedback"></p>
     </div>
+  </div>
+
+  <!-- 힌트 이미지 모달 -->
+  <div id="hint-modal" class="modal">
+    <img src="/assets/stage1/problem-1.png" alt="힌트: 사물함 사진">
+    <button type="button" id="hint-close-btn">닫기</button>
   </div>
 
   <!-- 5) 정답 처리 후: 다음 노트북 위치 + 비밀번호 안내 -->
